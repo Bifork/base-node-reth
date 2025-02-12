@@ -35,12 +35,9 @@ services:
       --authrpc.port 9551
       --authrpc.jwtsecret /root/jwt/jwt.hex
       --metrics 0.0.0.0:9001
-      --chain "$RETH_CHAIN" 
-      --rollup.sequencer-http $RETH_SEQUENCER_HTTP 
+      --chain base 
+      --rollup.sequencer-http https://mainnet-sequencer.base.org
       --rollup.disable-tx-pool-gossip
-    environment:
-      - RETH_CHAIN=base
-      - RETH_SEQUENCER_HTTP=https://mainnet-sequencer.base.org
 
   op-node:
     restart: unless-stopped
